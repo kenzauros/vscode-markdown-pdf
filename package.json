@@ -343,7 +343,7 @@
             "string"
           ],
           "default": "@startuml",
-          "description": "Oppening delimiter used for the plantuml parser."
+          "description": "Opening delimiter used for the plantuml parser."
         },
         "markdown-pdf.plantumlCloseMarker": {
           "type": [
