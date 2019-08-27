@@ -352,6 +352,13 @@
           "default": "@enduml",
           "description": "Closing delimiter used for the plantuml parser."
         },
+        "markdown-pdf.plantumlImageFormat": {
+          "type": [
+            "string"
+          ],
+          "default": "svg",
+          "description": "optional, defaults to svg. Format used by generateSource to generate the src of the image element."
+        },
         "markdown-pdf.format": {
           "type": [
             "string",

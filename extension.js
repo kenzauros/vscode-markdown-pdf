@@ -262,7 +262,8 @@ function convertMarkdownToHtml(filename, type, text) {
   // https://github.com/gmunguia/markdown-it-plantuml
   var plantumlOptions = {
     openMarker: vscode.workspace.getConfiguration('markdown-pdf')['plantumlOpenMarker'] || '@startuml',
-    closeMarker: vscode.workspace.getConfiguration('markdown-pdf')['plantumlCloseMarker'] || '@enduml'
+    closeMarker: vscode.workspace.getConfiguration('markdown-pdf')['plantumlCloseMarker'] || '@enduml',
+    imageFormat : vscode.workspace.getConfiguration('markdown-pdf')['plantumlImageFormat '] || 'svg'
   }
   md.use(require('markdown-it-plantuml'), plantumlOptions);
 
