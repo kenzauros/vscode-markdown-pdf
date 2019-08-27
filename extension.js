@@ -728,7 +728,7 @@ function fixHref(resource, href) {
     }
 
     // Use href as file URI if it is absolute
-    if (path.isAbsolute(href) || hrefUri.scheme === 'file') {
+    if (path.isAbsolute(href)) {
       return vscode.Uri.file(href).toString();
     }
 
@@ -736,11 +736,11 @@ function fixHref(resource, href) {
     var stylesRelativePathFile = vscode.workspace.getConfiguration('markdown-pdf')['stylesRelativePathFile'];
     let root = vscode.workspace.getWorkspaceFolder(resource);
     if (stylesRelativePathFile === false && root) {
-      return vscode.Uri.file(path.join(root.uri.fsPath, href)).toString();
+      return path.join(root.uri.fsPath, href);
     }
 
     // Otherwise look relative to the markdown file
-    return vscode.Uri.file(path.join(path.dirname(resource.fsPath), href)).toString();
+    return path.join(path.dirname(resource.fsPath), href);
   } catch (error) {
     showErrorMessage('fixHref()', error);
   }
