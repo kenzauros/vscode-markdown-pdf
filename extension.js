@@ -264,7 +264,7 @@ function convertMarkdownToHtml(filename, type, text) {
     openMarker: vscode.workspace.getConfiguration('markdown-pdf')['plantumlOpenMarker'] || '@startuml',
     closeMarker: vscode.workspace.getConfiguration('markdown-pdf')['plantumlCloseMarker'] || '@enduml',
     imageFormat : vscode.workspace.getConfiguration('markdown-pdf')['plantumlImageFormat '] || 'svg'
-  }
+  };
   md.use(require('markdown-it-plantuml'), plantumlOptions);
 
   statusbarmessage.dispose();
